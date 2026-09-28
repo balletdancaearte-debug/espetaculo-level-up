@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEVEL UP - Espetáculo de Dança 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #05010a;
+      color: #ffffff;
+    }
+    
+    .bg-levelup {
+      background-color: #05010a;
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(255, 0, 127, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 15% 85%, rgba(255, 215, 0, 0.08) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    .border-glow {
+      box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #ffffff 30%, #ffd700 70%, #ff007f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-levelup min-h-screen pt-20">
+
+  <!-- BARRA DE NAVEGAÇÃO -->
+  <nav class="w-full bg-[#0a0212]/95 backdrop-blur-md border-b border-[#ff007f]/40 fixed top-0 z-40 shadow-[0_4px_20px_rgba(255,0,127,0.2)]">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="bg-white p-1 rounded-full h-12 w-12 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(255,0,127,0.4)]">
+          <img src="08_Danca&Arte_Logo_Full_FundoClaro_alpha.png" alt="Logo Studio de Ballet Dança & Arte" class="h-10 w-10 object-contain">
+        </div>
+        <span class="font-black text-white text-sm md:text-base tracking-wide leading-tight hidden sm:block">
+          Studio de Ballet<br><span class="text-[#ff007f]">Dança & Arte</span>
+        </span>
+      </div>
+
+      <div class="flex gap-3 md:gap-6 text-[10px] md:text-sm font-bold text-gray-300 uppercase tracking-wider">
+        <a href="#como-funciona" class="hover:text-[#ffd700] transition-colors" onclick="voltarParaHome()">O Evento</a>
+        <a href="#figurinos" class="hover:text-[#ffd700] transition-colors" onclick="voltarParaHome()">Figurinos</a>
+        <a href="#inscricao" class="hidden md:block text-[#ff007f] hover:text-[#ffd700] transition-colors" onclick="voltarParaHome()">Inscrição</a>
+        <a href="#como-chegar" class="hover:text-[#ffd700] transition-colors" onclick="voltarParaHome()">Como Chegar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================== -->
+  <!-- CONTEÚDO PRINCIPAL (PÁGINA INICIAL)        -->
+  <!-- ========================================== -->
+  <div id="main-content">
+    
+    <!-- CABEÇALHO / CAPA + TÍTULO EM DESTAQUE -->
+    <header class="max-w-5xl mx-auto px-4 pt-6 pb-8 text-center">
+      <div class="w-full mb-8 rounded-2xl overflow-hidden border-2 border-[#ffd700]/50 shadow-[0_0_30px_rgba(255,215,0,0.2)]">
+        <img src="ChatGPT Image 25 de set. de 2026, 12_49_12.png" alt="Capa Espetáculo LEVEL UP" class="w-full h-auto object-cover">
+      </div>
+
+      <div class="inline-block bg-[#ff007f]/10 border border-[#ff007f] text-[#ff007f] text-xs font-bold px-4 py-1.5 rounded-full tracking-widest uppercase mb-3 shadow-[0_0_10px_rgba(255,0,127,0.3)]">
+        Espetáculo de Dança
+      </div>
+      
+      <!-- TÍTULO PRINCIPAL COM FOCO TOTAL -->
+      <h1 class="text-5xl md:text-7xl font-black tracking-wider uppercase mb-3 text-gradient">
+        LEVEL UP
+      </h1>
+
+      <!-- DATA E HORA COM TAMANHO EQUILIBRADO -->
+      <div class="inline-flex items-center gap-2 bg-[#130826]/90 border border-[#ffd700]/60 px-5 py-2 rounded-full text-sm md:text-base font-bold text-[#ffd700] mb-4 shadow-[0_0_15px_rgba(255,215,0,0.2)]">
+        <span>📅</span> 21/11/2026 às 16h
+      </div>
+
+      <p class="text-gray-300 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+        Uma jornada coreográfica onde cada passo é uma fase, cada apresentação é uma conquista e cada aluno evolui para o próximo nível.
+      </p>
+    </header>
+
+    <!-- QUADROS DE INFORMAÇÃO DO EVENTO -->
+    <section class="max-w-5xl mx-auto px-4 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- LOCAL -->
+        <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-6 text-left border-glow">
+          <h3 class="text-[#ff007f] font-black uppercase tracking-wider mb-4 text-lg">Local</h3>
+          <p class="font-bold text-white mb-2">Comunidade das Nações</p>
+          <p class="text-sm text-gray-300 mb-1">Poligonal L - Parque I - Av. Marginal, BR-040</p>
+          <p class="text-sm text-gray-300">Esplanada I, Valparaíso de Goiás - GO</p>
+        </div>
+
+        <!-- INSCRIÇÃO -->
+        <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-6 text-left border-glow">
+          <h3 class="text-[#ff007f] font-black uppercase tracking-wider mb-4 text-lg">Inscrição</h3>
+          <p class="text-sm text-gray-300 mb-2">Taxa de Participação:</p>
+          <p class="text-4xl font-black text-white mb-4">R$ 200,00</p>
+          <p class="text-[11px] text-gray-400 leading-tight">*Sujeito a taxa da maquininha na opção de crédito.</p>
+        </div>
+
+        <!-- FIGURINO -->
+        <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-6 text-left border-glow">
+          <h3 class="text-[#ff007f] font-black uppercase tracking-wider mb-4 text-lg">Figurino</h3>
+          <p class="text-sm text-gray-300 mb-4">A taxa de inscrição <strong class="text-white">não contempla</strong> o figurino.</p>
+          <p class="text-sm text-gray-300">O figurino será adquirido à parte através do link de compra que será compartilhado.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="w-full border-t border-blue-600/30 mb-16"></div>
+
+    <!-- COMO FUNCIONA (PASSOS) -->
+    <section id="como-funciona" class="max-w-5xl mx-auto px-4 mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-black text-white mb-6">Como Funciona</h2>
+        <p class="text-sm md:text-base font-bold text-white max-w-3xl mx-auto">
+          Assim como nos games, a evolução acontece em fases. Complete cada etapa para desbloquear sua participação no espetáculo.
+        </p>
+      </div>
+
+      <div class="w-full border-t border-blue-600/30 mb-12"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- PASSO 01 -->
+        <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-6 pt-10 relative text-left border-glow">
+          <div class="absolute -top-4 left-6 bg-[#ff007f] text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wider">PASSO 01</div>
+          <h3 class="text-lg font-bold text-white mb-3">Visualizar Figurino</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-5">
+            Confirme sua turma para ver o figurino e consulte as orientações de aquisição (feita à parte via link de compra).
+          </p>
+          <a href="#figurinos" class="inline-block bg-[#20052e] border border-[#ff007f] text-[#ff007f] text-xs font-bold px-4 py-2 rounded-md hover:bg-[#ff007f] hover:text-white transition-colors">
+            👗 Ver Catálogo de Figurinos
+          </a>
+        </div>
+
+        <!-- PASSO 02 -->
+        <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-6 pt-10 relative text-left border-glow">
+          <div class="absolute -top-4 left-6 bg-[#ff007f] text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wider">PASSO 02</div>
+          <h3 class="text-lg font-bold text-white mb-3">Dados da Inscrição</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Preencha os dados do bailarino(a) no formulário e selecione as modalidades em que irá apresentar no espetáculo.
+          </p>
+        </div>
+
+        <!-- PASSO 03 -->
+        <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-6 pt-10 relative text-left border-glow">
+          <div class="absolute -top-4 left-6 bg-[#ff007f] text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wider">PASSO 03</div>
+          <h3 class="text-lg font-bold text-white mb-3">Pagamento e Confirmação</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Efetue o pagamento da taxa de inscrição de <strong class="text-[#ffd700]">R$ 200,00</strong> (Pix ou Cartão) para garantir a participação.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELETOR DE FIGURINOS COM CONFIRMAÇÃO -->
+    <section id="figurinos" class="max-w-4xl mx-auto px-4 py-10 mb-10">
+      <div class="bg-[#130826]/80 border-2 border-[#ffd700]/50 rounded-2xl p-6 md:p-10 shadow-[0_0_30px_rgba(255,215,0,0.15)] text-center">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-[#ffd700] uppercase tracking-wider mb-2">
+          👗 Acesso ao Figurino
+        </h2>
+        <p class="text-gray-300 text-sm mb-8">
+          Selecione a unidade e a turma correspondente para desbloquear a visualização do seu figurino.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mb-6">
+          <div>
+            <label class="block text-xs font-bold text-[#ff007f] uppercase tracking-wider mb-2">1. Unidade / Escola:</label>
+            <select id="escolaSelect" onchange="atualizarTurmas()" class="w-full bg-[#0a0212] border-2 border-[#ff007f] rounded-xl p-3 text-white text-sm font-semibold outline-none focus:border-[#ffd700]">
+              <option value="" disabled selected>-- Selecione a Escola --</option>
+              <option value="studio">Studio de Ballet Dança & Arte</option>
+              <option value="colegio">Colégio Rio Branco Objetivo</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-[#ff007f] uppercase tracking-wider mb-2">2. Turma e Professora:</label>
+            <select id="turmaSelect" onchange="prepararBotaoFigurino()" disabled class="w-full bg-[#0a0212] border-2 border-[#ff007f] rounded-xl p-3 text-white text-sm font-semibold outline-none focus:border-[#ffd700] opacity-50 cursor-not-allowed">
+              <option value="" disabled selected>-- Primeiro escolha a escola --</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Área de Confirmação -->
+        <div id="areaConfirmacao" class="hidden mt-6 text-center bg-[#05010a] p-4 rounded-xl border border-[#ff007f]/30">
+          <label class="flex items-center justify-center gap-3 cursor-pointer text-gray-300 hover:text-white mb-6">
+            <input type="checkbox" id="checkConfirma" class="w-5 h-5 accent-[#ff007f] rounded" onchange="liberarBotao()">
+            <span class="text-sm font-bold">Confirmo que esta é a turma em que o aluno(a) está matriculado(a).</span>
+          </label>
+          
+          <button id="btnAcessarFigurino" onclick="abrirPaginaFigurino()" class="hidden mx-auto bg-[#ff007f] hover:bg-[#e60073] text-white font-black py-4 px-8 rounded-xl uppercase tracking-wider text-base transition-all duration-300 shadow-[0_0_20px_rgba(255,0,127,0.5)] transform hover:scale-105 border border-[#ffd700]">
+            👁️ Visualizar Figurino
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INSCRIÇÃO RÁPIDA -->
+    <section id="inscricao" class="max-w-4xl mx-auto px-4 py-10 mb-10 border-t border-blue-600/30">
+      <div class="bg-[#0b0415] border border-[#ff007f]/50 rounded-2xl p-8 text-center border-glow">
+        <h2 class="text-2xl font-black text-white uppercase mb-4">Já sabe o figurino e quer apenas fazer a Inscrição?</h2>
+        <p class="text-gray-400 text-sm mb-6">Acesse o formulário diretamente pela plataforma segura.</p>
+        <button onclick="abrirModalTermo()" class="inline-block bg-gradient-to-r from-[#ff007f] to-[#7928ca] text-white font-bold py-3 px-8 rounded-xl uppercase tracking-wider text-sm transition-all hover:scale-105 cursor-pointer shadow-[0_0_15px_rgba(255,0,127,0.4)]">
+          Ir para Formulário de Inscrição ➔
+        </button>
+      </div>
+    </section>
+
+    <!-- COMO CHEGAR -->
+    <section id="como-chegar" class="max-w-5xl mx-auto px-4 mb-20">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-black text-white mb-4">Como Chegar</h2>
+        <p class="text-sm font-bold text-gray-300">Comunidade das Nações - Valparaíso de Goiás</p>
+      </div>
+      <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-2 border-glow w-full h-[400px]">
+        <iframe src="https://maps.google.com/maps?q=Comunidade+das+Nacoes+Valparaiso+de+Goias&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; border-radius: 0.5rem;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="text-center mt-4">
+        <a href="https://maps.app.goo.gl/p8CGFCj8UVRDBRz98" target="_blank" class="inline-block text-xs font-bold text-[#ffd700] hover:underline">
+          📍 Abrir rota diretamente no aplicativo do Google Maps ➔
+        </a>
+      </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-[#0b0415] border-t border-[#ff007f]/40 pt-10 pb-6">
+      <div class="max-w-4xl mx-auto px-4 flex flex-col items-center">
+        <h3 class="text-[#ffd700] font-bold uppercase tracking-widest text-sm mb-6">Fale Conosco</h3>
+        <div class="flex flex-col md:flex-row gap-6 md:gap-12 mb-8">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/5561995033415" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-[#25D366] transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span class="font-bold text-sm tracking-wide">(61) 99503-3415</span>
+          </a>
+          <!-- Instagram -->
+          <a href="https://instagram.com/balletdancaearte" target="_blank" class="flex items-center gap-3 text-gray-300 hover:text-[#E1306C] transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <span class="font-bold text-sm tracking-wide">@balletdancaearte</span>
+          </a>
+        </div>
+        <div class="text-center text-xs text-gray-500 opacity-60">
+          <p>Studio de Ballet Dança & Arte © 2026 — Espetáculo LEVEL UP</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- PÁGINA DO FIGURINO                         -->
+  <!-- ========================================== -->
+  <div id="pagina-figurino" class="hidden absolute top-0 left-0 w-full min-h-screen bg-[#05010a] z-50 pt-8 pb-20">
+    
+    <div class="max-w-4xl mx-auto px-4">
+      
+      <!-- Cabeçalho de Voltar -->
+      <div class="flex items-center justify-between border-b border-[#ff007f]/30 pb-6 mb-8">
+        <button onclick="voltarParaHome()" class="flex items-center gap-2 text-gray-300 hover:text-[#ff007f] font-bold transition-colors">
+          <span class="text-2xl">←</span> Voltar
+        </button>
+        <span class="text-[#ffd700] text-xs md:text-sm font-black uppercase tracking-widest border border-[#ffd700] px-3 py-1 rounded-full">
+          Visualização de Figurino
+        </span>
+      </div>
+
+      <!-- Turma e Imagem -->
+      <div class="flex flex-col items-center">
+        
+        <h1 id="pf-turma" class="text-2xl md:text-4xl font-black text-white text-center mb-6 uppercase tracking-wide text-gradient">Nome da Turma</h1>
+        
+        <div class="w-full max-w-2xl bg-[#130826] border-4 border-[#ff007f] rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(255,0,127,0.3)] mb-4">
+          <img id="pf-img" src="" alt="Figurino Oficial da Turma" class="w-full h-auto object-cover">
+        </div>
+
+        <!-- AVISO DE IMAGEM ILUSTRATIVA -->
+        <p class="text-xs text-gray-400 italic text-center max-w-xl mb-8 px-2">
+          *Nota: As imagens apresentadas são de caráter ilustrativo e conceitual. O produto real pode sofrer pequenas variações em relação a cores, texturas dos tecidos e acabamentos.*
+        </p>
+
+        <!-- Botão que abre a Confirmação de Termos antes do Asas -->
+        <div class="w-full max-w-md text-center">
+          <button onclick="abrirModalTermo()" class="inline-block w-full bg-gradient-to-r from-[#ff007f] to-[#7928ca] hover:from-[#ffd700] hover:to-[#ff007f] text-white hover:text-[#05010a] font-black py-4 px-8 rounded-xl uppercase tracking-widest text-base transition-all duration-300 shadow-[0_0_25px_rgba(255,0,127,0.6)] border-2 border-[#ffd700] transform hover:scale-105">
+            Fazer Inscrição Agora ➔
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- MODAL DE TERMO DE ACEITE ANTES DO ASAS      -->
+  <!-- ========================================== -->
+  <div id="modalTermo" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="bg-[#130826] border-2 border-[#ffd700] rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-[0_0_40px_rgba(255,215,0,0.3)] text-left">
+      <h3 class="text-xl font-black text-[#ffd700] uppercase mb-4 text-center">Termo de Inscrição e Regulamento</h3>
+      
+      <div class="bg-[#05010a] border border-purple-900/50 rounded-xl p-4 h-48 overflow-y-auto text-xs text-gray-300 mb-6 leading-relaxed">
+        <p class="mb-2 font-bold text-white text-center">TERMO DE COMPROMISSO E REGULAMENTO - ESPETÁCULO LEVEL UP 2026</p>
+        <p class="mb-2"><strong>CONTRATADA:</strong> Studio de Ballet Dança & Arte, pessoa jurídica de direito privado, CNPJ nº 36.689.181/0001-52, com sede em Valparaíso de Goiás - GO.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 1ª DO OBJETO E LOCAL</p>
+        <p class="mb-2">O presente termo tem por objeto regular a participação do(a) aluno(a) bailarino(a) no espetáculo de dança "LEVEL UP", promovido pelo Studio de Ballet Dança & Arte, a ser realizado no dia 21 de novembro de 2026, às 16:00 horas, na Comunidade das Nações, localizada na Av. Marginal, BR-040, Esplanada I, Valparaíso de Goiás - GO.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 2ª - DAS OBRIGAÇÕES, FREQUÊNCIA AOS ENSAIOS E DIREÇÃO ARTÍSTICA</p>
+        <p class="mb-2">I. O(A) aluno(a) e seu responsável comprometem-se a cumprir os horários de chamada e comparecer aos ensaios programados pela instituição.</p>
+        <p class="mb-2">II. Para garantir a segurança e a qualidade técnica da apresentação coletiva, o(a) aluno(a) deverá atingir uma FREQUÊNCIA MÍNIMA DE 75% (setenta e cinco por cento) no total de ensaios (incluindo ensaios regulares, ensaios gerais e marcação de palco). O não atingimento dessa porcentagem sem justificativa prévia e formal poderá acarretar a exclusão da coreografia, sem direito à restituição de valores. As ausências nos ensaios só serão consideradas justificadas mediante apresentação de atestado médico.</p>
+        <p class="mb-2">III. As decisões referentes à coreografia, distribuição de personagens e posicionamento dos bailarinos no palco são de competência técnica e exclusiva da Direção Artística e dos professores, não cabendo interferência, exigência ou contestação por parte dos pais ou responsáveis.</p>
+        <p class="mb-2">IV. ORIENTAÇÃO AOS PAIS E RESPONSÁVEIS: O espetáculo é concebido como uma obra artística una e integrada. Solicitamos aos responsáveis que permaneçam no local e assistam ao espetáculo como um todo - prestigiando não apenas a turma de seu filho(a), mas todas as demais apresentações e o esforço coletivo dos bailarinos(as) no palco.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 3ª - DO VALOR, COMPOSIÇÃO DOS CUSTOS E PAGAMENTO</p>
+        <p class="mb-2">I. A taxa de participação no espetáculo é no valor fixo de R$ 200,00 (duzentos reais), que poderá estar sujeita a acréscimo de taxa operacional/maquininha caso a opção de pagamento escolhida seja no cartão de crédito.</p>
+        <p class="mb-2">II. Detalhamento dos custos cobertos pela taxa de inscrição:</p>
+        <p class="mb-1 ml-4">a) Estrutura física e técnica do evento (locação de espaço, sonorização profissional, projeto de iluminação cênica, painéis de LED e equipe técnica/apoio de bastidores);</p>
+        <p class="mb-1 ml-4">b) Produção artística, ambientação, decorações temáticas e custos de marketing/divulgação do evento;</p>
+        <p class="mb-1 ml-4">c) Lembrancinha comemorativa do evento;</p>
+        <p class="mb-1 ml-4">d) Kit lanche de bastidores (fornecido EXCLUSIVAMENTE para as alunas e bailarinas participantes durante a preparação e o evento; os pais e acompanhantes não recebem o lanche);</p>
+        <p class="mb-1 ml-4">e) Disponibilização de 02 (dois) ingressos VIPs para acesso ao espetáculo;</p>
+        <p class="mb-2 ml-4">f) Cobertura de registros fotográficos digitais oficiais da turma.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 4ª - DOS INGRESSOS E ASSENTOS</p>
+        <p class="mb-2">I. Ingressos VIPs (Inclusos na Inscrição): Os 02 (dois) ingressos VIPs concedidos pela inscrição dão acesso às primeiras fileiras do evento. A categoria VIP foi criada para privilegiar a visão das famílias, porém o uso desses ingressos é definido livremente pelos responsáveis do(a) aluno(a). Os assentos VIPs não são numerados e serão ocupados por ordem de chegada.</p>
+        <p class="mb-2">II. Ingressos Comuns (Extras): Ingressos adicionais poderão ser adquiridos posteriormente e darão acesso à área comum do espaço (atrás da área VIP), também por ordem de chegada. Informações sobre a venda desses ingressos extras serão divulgadas no grupo oficial.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 5ª - SOBRE A AQUISIÇÃO DO FIGURINO E PADRÃO VISUAL</p>
+        <p class="mb-2">I. O figurino NÃO está incluso na taxa de inscrição.</p>
+        <p class="mb-2">II. Cada turma possui um figurino específico para a sua respectiva coreografia. O figurino, penteado e demais itens visuais são definidos exclusivamente pela Direção Artística do Studio. Os pais e responsáveis devem seguir rigorosamente todas as orientações de padronização repassadas.</p>
+        <p class="mb-2">III. O link de acesso para a compra do figurino correspondente a cada turma será divulgado no canal oficial de avisos. É de total responsabilidade do responsável realizar a compra dentro do prazo estipulado pelos fornecedores parceiros. Atrasos na aquisição que impeçam a chegada do figurino a tempo excluem qualquer responsabilidade do Studio quanto à participação do(a) aluno(a) no palco.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 6ª - DA DINÂMICA DO DIA DO ESPETÁCULO E BASTIDORES</p>
+        <p class="mb-2">I. Preparação Prévia: As alunas deverão comparecer ao local do evento JÁ PRONTAS para a apresentação (vestidas com o figurino completo, penteado e demais acessórios), visto que não haverá estrutura de vestiário no local.</p>
+        <p class="mb-2">II. Horário de Chegada e Liberação: Os(As) alunos (as) deverão chegar ao local do evento com a antecedência estipulada no cronograma oficial. Por questões de segurança, a liberação das crianças ocorrerá única e exclusivamente ao final de todo o espetáculo, sob a coordenação da equipe de apoio.</p>
+        <p class="mb-2">III. Acesso aos Bastidores: É terminantemente PROIBIDA a entrada de pais, familiares ou acompanhantes nas áreas de coxia e bastidores, salvo em casos de solicitação expressa da equipe do Studio. As alunas estarão acompanhadas e amparadas por nossos monitores e apoio técnico durante todo o tempo.</p>
+        <p class="mb-2">IV. Itens Pessoais: É obrigatória a identificação com o nome da aluna/bailarina em todos os seus acessórios, figurinos e itens pessoais levados no dia do evento. O Studio não se responsabiliza por perdas, furtos ou danos a itens, celulares ou objetos de valor deixados nos bastidores, recomendando-se levar apenas o estritamente necessário.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 7ª - DO CANAL OFICIAL DE AVISOS (WHATSAPP)</p>
+        <p class="mb-2">I. A instituição manterá um grupo oficial de WhatsApp fechado, onde somente administradores poderão enviar mensagens, sendo exclusivo para a comunicação com os responsáveis e participantes do espetáculo. Dúvidas poderão ser tiradas diretamente no canal/número oficial de atendimento da instituição, durante o horário comercial e de atendimento.</p>
+        <p class="mb-2">II. É de inteira responsabilidade do(a) responsável permanecer no canal oficial e acompanhar as mensagens, visto que todos os comunicados oficiais serão repassados exclusivamente por este meio. A alegação de desconhecimento não exime o cumprimento dos prazos.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 8ª - DA SAÚDE E EMERGÊNCIAS</p>
+        <p class="mb-2">I. É obrigatório que o(a) responsável preencha corretamente o Formulário de Inscrição, informando detalhadamente qualquer condição de saúde, restrição alimentar ou alergia grave do(a) aluno(a), garantindo a segurança durante o fornecimento do kit lanche nos bastidores.</p>
+        <p class="mb-2">II. Em caso de acidente ou mal-estar do(a) aluno(a) durante ensaios ou evento, ο Studio está autorizado a prestar os primeiros socorros e, se necessário, acionar serviços de emergência médica, comunicando o responsável imediatamente.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 9ª - DA DESISTÊNCIA E REEMBOLSO</p>
+        <p class="mb-2">I. Direito de Arrependimento: O(A) contratante poderá desistir da participação e solicitar o reembolso integral da taxa de inscrição no prazo de até 7 (sete) dias corridos contados a partir da data do pagamento, mediante solicitação formal por escrito enviada à instituição, em total conformidade com o Código de Defesa do Consumidor.</p>
+        <p class="mb-2">II. Desistência Após o Prazo Legal: Caso a desistência ocorra após o prazo de 7 (sete) dias corridos do pagamento, a taxa de inscrição NÃO será reembolsada, visto que os custos operacionais e estruturais do evento já estarão em fase de compromisso financeiro irrevogável.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 10ª - DE FORÇA MAIOR E EVENTUAIS ALTERAÇÕES</p>
+        <p class="mb-2">Caso ocorram situações de força maior, imprevistos estruturais ou por decisão administrativa da Direção, o Studio reserva-se o direito de alterar a data, o horário ou o local do espetáculo. Tais alterações deverão ser comunicadas com antecedência aos responsáveis através dos canais oficiais, garantindo a realização do evento e não gerando direito à devolução da taxa de inscrição.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 11ª - DA AUTORIZAÇÃO DE USO DE IMAGEM E VOZ</p>
+        <p class="mb-2">O(A) responsável autoriza, de forma gratuita e irrevogável, o Studio de Ballet Dança & Arte a utilizar a imagem e a voz do(a) bailarino(a), capturados durante os ensaios e o espetáculo, para fins de divulgação institucional, redes sociais e materiais promocionais.</p>
+        <p class="mb-2 font-bold text-white">CLÁUSULA 12ª - DA ACEITAÇÃO DIGITAL</p>
+        <p>O pagamento da taxa de inscrição e a marcação do termo de aceite eletrônico no site oficial implicam na concordância integral com todas as regras e condições estabelecidas neste instrumento, dispensando-se a assinatura física.</p>
+      </div>
+
+      <!-- Botão para Baixar o Termo -->
+      <div class="mb-6 text-center">
+        <a href="TERMO DE COMPROMISSO E REGULAMENTO.pdf" download class="inline-flex items-center gap-2 text-xs font-bold text-[#ff007f] hover:text-[#ffd700] underline">
+          📥 Baixar Termo em PDF
+        </a>
+      </div>
+
+      <!-- Caixa de Marcação -->
+      <label class="flex items-start gap-3 cursor-pointer text-gray-200 mb-6">
+        <input type="checkbox" id="checkTermo" class="w-5 h-5 accent-[#ff007f] rounded mt-0.5" onchange="liberarLinkAsas()">
+        <span class="text-xs font-bold leading-tight">Li e confirmo estar de acordo com os termos e regulamento do espetáculo LEVEL UP.</span>
+      </label>
+
+      <!-- Botões de Ação -->
+      <div class="flex gap-4">
+        <button onclick="fecharModalTermo()" class="w-1/2 bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 rounded-xl text-sm transition-colors">
+          Cancelar
+        </button>
+        <!-- LINK ASAS (Bloqueado até marcar o termo) -->
+        <a id="btnIrParaAsas" href="#" target="_blank" class="w-1/2 bg-green-600/50 text-gray-400 font-black py-3 rounded-xl text-sm text-center uppercase tracking-wider cursor-not-allowed pointer-events-none transition-all">
+          Prosseguir para Pagamento ➔
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JAVASCRIPT COMPLETO -->
+  <script>
+    const figurinosDb = {
+      studio: [
+        { nome: "Baby Class 2 (Professora Mônica)", img: "figurino1.jpg" },
+        { nome: "Baby Class 2 e 3 anos (Professora Daniele)", img: "figurino2.jpg" },
+        { nome: "Baby Class 3 (Professora Mônica)", img: "figurino8.jpg" },
+        { nome: "Pré-Ballet (Professora Mônica)", img: "figurino13.jpg" },
+        { nome: "Pré-Ballet (Professora Julia)", img: "figurino13.jpg" },
+        { nome: "Pré-Ballet 16:30h (Professora Silmara)", img: "figurino17.jpg" },
+        { nome: "Pré-Ballet 18:30h (Professora Silmara)", img: "figurino5.jpg" },
+        { nome: "Juvenil (Professora Mônica)", img: "figurino9.jpg" },
+        { nome: "Juvenil (Professora Silmara)", img: "figurino19.jpg" },
+        { nome: "Juvenil (Professora Julia)", img: "figurino12.jpg" },
+        { nome: "Ballet Adulto Iniciante (Professora Ana Clara)", img: "figurino10.jpg" },
+        { nome: "Ballet Adulto Iniciante (Professora Ainny)", img: "figurino15.jpg" },
+        { nome: "Ballet Intermediário (Professora Ainny)", img: "figurino18.jpg" },
+        { nome: "Contemporâneo (Professora Isabela)", img: "figurino14.jpg" },
+        { nome: "Danças Urbanas (Professor Junior)", img: "figurino16.jpg" }
+      ],
+      colegio: [
+        { nome: "Infantil 2", img: "figurino6.jpg" },
+        { nome: "Infantil 3", img: "figurino6.jpg" },
+        { nome: "Infantil 4", img: "figurino3_1.jpg" },
+        { nome: "Infantil 5", img: "figurino3.jpg" },
+        { nome: "1º ano", img: "figurino4_1.jpg" },
+        { nome: "2º ano", img: "figurino4.jpg" },
+        { nome: "3º ano", img: "figurino4.jpg" },
+        { nome: "4º ano", img: "figurino7.jpg" },
+        { nome: "5º ano", img: "figurino7.jpg" }
+      ]
+    };
+
+    function atualizarTurmas() {
+      const escola = document.getElementById('escolaSelect').value;
+      const turmaSelect = document.getElementById('turmaSelect');
+      const area = document.getElementById('areaConfirmacao');
+      const btn = document.getElementById('btnAcessarFigurino');
+      const check = document.getElementById('checkConfirma');
+
+      turmaSelect.innerHTML = '<option value="" disabled selected>-- Selecione a Turma --</option>';
+      
+      area.classList.add('hidden');
+      btn.classList.add('hidden');
+      check.checked = false;
+
+      if (escola && figurinosDb[escola]) {
+        turmaSelect.disabled = false;
+        turmaSelect.classList.remove('opacity-50', 'cursor-not-allowed');
+
+        figurinosDb[escola].forEach((item, index) => {
+          const opt = document.createElement('option');
+          opt.value = index;
+          opt.textContent = item.nome;
+          turmaSelect.appendChild(opt);
+        });
+      }
+    }
+
+    function prepararBotaoFigurino() {
+      const escola = document.getElementById('escolaSelect').value;
+      const index = document.getElementById('turmaSelect').value;
+      const area = document.getElementById('areaConfirmacao');
+      const btn = document.getElementById('btnAcessarFigurino');
+      const check = document.getElementById('checkConfirma');
+
+      if (escola && index !== "") {
+        area.classList.remove('hidden');
+        check.checked = false;
+        btn.classList.add('hidden');
+      }
+    }
+
+    function liberarBotao() {
+      const isChecked = document.getElementById('checkConfirma').checked;
+      const btn = document.getElementById('btnAcessarFigurino');
+      
+      if (isChecked) {
+        btn.classList.remove('hidden');
+      } else {
+        btn.classList.add('hidden');
+      }
+    }
+
+    function abrirPaginaFigurino() {
+      const escola = document.getElementById('escolaSelect').value;
+      const index = document.getElementById('turmaSelect').value;
+      
+      if (escola && index !== "" && figurinosDb[escola][index]) {
+        const item = figurinosDb[escola][index];
+        
+        document.getElementById('pf-turma').textContent = item.nome;
+        document.getElementById('pf-img').src = item.img;
+        
+        document.getElementById('main-content').style.display = 'none';
+        document.getElementById('pagina-figurino').classList.remove('hidden');
+        
+        window.scrollTo(0, 0);
+      }
+    }
+
+    function voltarParaHome() {
+      document.getElementById('pagina-figurino').classList.add('hidden');
+      document.getElementById('main-content').style.display = 'block';
+      
+      document.getElementById('checkConfirma').checked = false;
+      document.getElementById('btnAcessarFigurino').classList.add('hidden');
+    }
+
+    // Funções do Modal de Termo
+    function abrirModalTermo() {
+      document.getElementById('modalTermo').classList.remove('hidden');
+    }
+
+    function fecharModalTermo() {
+      document.getElementById('modalTermo').classList.add('hidden');
+      document.getElementById('checkTermo').checked = false;
+      const btnAsas = document.getElementById('btnIrParaAsas');
+      btnAsas.classList.add('bg-green-600/50', 'text-gray-400', 'cursor-not-allowed', 'pointer-events-none');
+      btnAsas.classList.remove('bg-green-600', 'text-white', 'hover:bg-green-500', 'shadow-[0_0_15px_rgba(34,197,94,0.5)]');
+      btnAsas.href = "#";
+    }
+
+    function liberarLinkAsas() {
+      const isChecked = document.getElementById('checkTermo').checked;
+      const btnAsas = document.getElementById('btnIrParaAsas');
+
+      if (isChecked) {
+        btnAsas.classList.remove('bg-green-600/50', 'text-gray-400', 'cursor-not-allowed', 'pointer-events-none');
+        btnAsas.classList.add('bg-green-600', 'text-white', 'hover:bg-green-500', 'shadow-[0_0_15px_rgba(34,197,94,0.5)]');
+        // SUBSTITUA O '#' ABAIXO PELO SEU LINK OFICIAL DA PLATAFORMA ASAS:
+        btnAsas.href = "https://seu-link-da-plataforma-asas.com"; 
+      } else {
+        btnAsas.classList.add('bg-green-600/50', 'text-gray-400', 'cursor-not-allowed', 'pointer-events-none');
+        btnAsas.classList.remove('bg-green-600', 'text-white', 'hover:bg-green-500', 'shadow-[0_0_15px_rgba(34,197,94,0.5)]');
+        btnAsas.href = "#";
+      }
+    }
+  </script>
+</body>
+</html>
