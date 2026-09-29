@@ -1,4 +1,4 @@
-// api/inscricao.js - Versão Segura com Variável de Ambiente
+// api/inscricao.js - Código Completo e Seguro
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ erro: 'Método não permitido' });
   }
 
-  // Pega a chave com segurança das Variáveis de Ambiente da Vercel
+  // Pega a chave das Variáveis de Ambiente da Vercel
   const ASAAS_API_KEY = process.env.ASAAS_API_KEY;
 
   if (!ASAAS_API_KEY) {
@@ -78,7 +78,7 @@ export default async function handler(req, res) {
     const valorParcela = 100.00;
 
     const hoje = new Date();
-    hoje.setDate(hoje.getDate() + 3);
+    hoje.setDate(hoje.getDate() + 3); // Vencimento da 1ª parcela
     const dueDate = hoje.toISOString().split('T')[0];
 
     const description = `LEVEL UP 2026 | Aluna: ${dados.nomeAluna} | Turma: ${dados.turma} | Alergia: ${dados.alergia} | Saúde: ${dados.condicaoMedica}`;
@@ -92,7 +92,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         customer: customerId,
-        billingType: 'UNDEFINED',
+        billingType: 'UNDEFINED', // Aceita Pix, Boleto e Cartão em todas as parcelas
         installmentCount: totalParcelas,
         value: valorParcela,
         dueDate: dueDate,
