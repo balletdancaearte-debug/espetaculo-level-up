@@ -285,7 +285,7 @@
         
         <div id="formInscricaoBox">
           <h2 class="text-2xl font-black text-white uppercase mb-2">Formulário de Inscrição</h2>
-          <p class="text-gray-400 text-sm mb-8">Preencha todos os dados abaixo para gerar a cobrança e receber o link de pagamento do Asaas.</p>
+          <p class="text-gray-400 text-sm mb-8">Preencha todos os dados abaixo para gerar a cobrança e ser direcionado ao pagamento no Asaas.</p>
           
           <form id="formInscricao" onsubmit="processarInscricaoAsaas(event)" class="space-y-5">
             
@@ -355,29 +355,11 @@
             </div>
 
             <div class="pt-6">
-              <!-- BOTÃO ATUALIZADO CONFORME SOLICITADO -->
               <button type="submit" id="btnGerarPagamento" class="w-full bg-gradient-to-r from-[#ff007f] to-[#7928ca] hover:from-[#ffd700] hover:to-[#ff007f] text-white hover:text-[#05010a] font-black py-4 rounded-xl uppercase tracking-widest text-base transition-all duration-300 shadow-[0_0_20px_rgba(255,0,127,0.5)] cursor-pointer">
                 Prosseguir para Pagamento ➔
               </button>
             </div>
           </form>
-        </div>
-
-        <!-- Bloco de Exibição do Link do Asaas -->
-        <div id="areaResultadoAsaas" class="hidden text-center py-6 space-y-6">
-          <div class="bg-green-500/10 border-2 border-green-500/50 p-6 rounded-2xl">
-            <h2 class="text-2xl font-black text-green-400 uppercase mb-2">Inscrição Registrada com Sucesso!</h2>
-            <p class="text-gray-300 text-sm">Os dados da aluna foram salvos. Clique no botão abaixo para abrir o checkout do Asaas e realizar o pagamento (Pix, Cartão em até 2x ou Boleto).</p>
-          </div>
-
-          <div class="p-4 bg-[#0a0212] border border-[#ffd700]/50 rounded-xl space-y-4">
-            <p class="text-sm font-bold text-[#ffd700]">Valor da Taxa: R$ 200,00</p>
-            <a id="linkPagamentoAsaas" href="#" target="_blank" class="inline-block w-full bg-green-600 hover:bg-green-500 text-white font-black py-4 px-6 rounded-xl uppercase tracking-wider text-base transition-all shadow-[0_0_20px_rgba(34,197,94,0.5)]">
-              💳 Abrir Link de Pagamento no Asaas (Pix / Cartão / Boleto)
-            </a>
-          </div>
-
-          <p class="text-xs text-gray-400">A confirmação é gravada automaticamente no painel da instituição após o pagamento.</p>
         </div>
 
       </div>
@@ -577,7 +559,6 @@
       document.getElementById('checkConfirma').checked = false;
       document.getElementById('btnAcessarFigurino').classList.add('hidden');
       document.getElementById('formInscricaoBox').style.display = 'block';
-      document.getElementById('areaResultadoAsaas').classList.add('hidden');
       document.getElementById('formInscricao').reset();
     }
 
@@ -620,7 +601,7 @@
       
       const btn = document.getElementById('btnGerarPagamento');
       btn.disabled = true;
-      btn.innerText = "Conectando ao Asaas...";
+      btn.innerText = "Redirecionando para o pagamento...";
 
       const dados = {
         nomeAluna: document.getElementById('nomeAluna').value,
@@ -646,14 +627,8 @@
         const resultado = await response.json();
 
         if (resultado.sucesso && resultado.invoiceUrl) {
-          // Esconde o formulário
-          document.getElementById('formInscricaoBox').style.display = 'none';
-
-          // Exibe o bloco final com o botão do Asaas
-          const areaResultado = document.getElementById('areaResultadoAsaas');
-          areaResultado.classList.remove('hidden');
-          document.getElementById('linkPagamentoAsaas').href = resultado.invoiceUrl;
-
+          // Redireciona automaticamente para o checkout do Asaas
+          window.location.href = resultado.invoiceUrl;
         } else {
           alert('Atenção: ' + (resultado.erro || 'Não foi possível gerar a cobrança.'));
           btn.disabled = false;
