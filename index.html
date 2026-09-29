@@ -129,14 +129,14 @@
           <div class="absolute -top-4 left-6 bg-[#ff007f] text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wider">PASSO 02</div>
           <h3 class="text-lg font-bold text-white mb-3">Dados da Inscrição</h3>
           <p class="text-sm text-gray-300 leading-relaxed">
-            Preencha os dados do bailarino(a) no formulário e selecione as modalidades em que irá apresentar.
+            Preencha os dados do bailarino(a) no formulário e selecione a opção de pagamento desejada.
           </p>
         </div>
         <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-6 pt-10 relative text-left border-glow">
           <div class="absolute -top-4 left-6 bg-[#ff007f] text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wider">PASSO 03</div>
           <h3 class="text-lg font-bold text-white mb-3">Pagamento e Confirmação</h3>
           <p class="text-sm text-gray-300 leading-relaxed">
-            Efetue o pagamento da taxa de inscrição de <strong class="text-[#ffd700]">R$ 200,00</strong> (Pix, Cartão ou Boleto) para garantir a participação.
+            Efetue o pagamento da taxa de inscrição de <strong class="text-[#ffd700]">R$ 200,00</strong> (À vista ou em 2x) para garantir a participação.
           </p>
         </div>
       </div>
@@ -343,8 +343,19 @@
               </div>
             </div>
 
-            <!-- 3. Saúde e Emergência -->
-            <h3 class="text-sm font-bold text-[#ffd700] uppercase border-b border-[#ff007f]/30 pb-2 pt-4">3. Segurança e Saúde</h3>
+            <!-- 3. Forma de Pagamento -->
+            <h3 class="text-sm font-bold text-[#ffd700] uppercase border-b border-[#ff007f]/30 pb-2 pt-4">3. Forma de Pagamento</h3>
+            <div>
+              <label class="block text-xs font-bold text-[#ff007f] uppercase mb-1">Selecione a Forma de Pagamento:</label>
+              <select id="formaPagamento" required class="w-full bg-[#0a0212] border border-[#ff007f] rounded-xl p-3 text-white text-sm outline-none focus:border-[#ffd700]">
+                <option value="" disabled selected>-- Selecione a forma de pagamento --</option>
+                <option value="a_vista">À vista (R$ 200,00)</option>
+                <option value="parcelado_2x">Em 2x (2x de R$ 100,00)</option>
+              </select>
+            </div>
+
+            <!-- 4. Saúde e Emergência -->
+            <h3 class="text-sm font-bold text-[#ffd700] uppercase border-b border-[#ff007f]/30 pb-2 pt-4">4. Segurança e Saúde</h3>
             <div>
               <label class="block text-xs font-bold text-gray-300 mb-1">Alergia alimentar ou restrição? (Se não tiver, digite "Não")</label>
               <textarea id="alergia" required rows="2" class="w-full bg-[#0a0212] border border-[#ff007f] rounded-xl p-3 text-white text-sm outline-none focus:border-[#ffd700] resize-none"></textarea>
@@ -612,6 +623,7 @@
         cpfResponsavel: document.getElementById('cpfResponsavel').value.replace(/\D/g, ''),
         emailResponsavel: document.getElementById('emailResponsavel').value,
         telefoneResponsavel: document.getElementById('telefoneResponsavel').value.replace(/\D/g, ''),
+        formaPagamento: document.getElementById('formaPagamento').value,
         alergia: document.getElementById('alergia').value,
         condicaoMedica: document.getElementById('condicaoMedica').value
       };
