@@ -84,8 +84,8 @@ export default async function handler(req, res) {
     dataVencimento.setDate(dataVencimento.getDate() + 3);
     const dueDate = dataVencimento.toISOString().split('T')[0];
 
-    // 6. Montar a descrição detalhada incluindo os dados da aluna, do responsável e o telefone
-    const descricao = `Inscrição LEVEL UP 2026 - Aluna: ${nomeAluna} | Nasc: ${dataNascimento} | Escola: ${escola === 'studio' ? 'Studio' : 'Colégio'} | Turma: ${turma} | Resp: ${nomeResponsavel} | Tel Resp: ${telefoneResponsavel || telLimpo} | Alergia: ${alergia} | Saúde: ${condicaoMedica} | Grupo Whats: ${GRUPO_WHATSAPP_URL}`;
+    // 6. Montar a descrição detalhada com parágrafo e link do WhatsApp
+    const descricao = `Inscrição LEVEL UP 2026 - Aluna: ${nomeAluna} | Nasc: ${dataNascimento} | Escola: ${escola === 'studio' ? 'Studio' : 'Colégio'} | Turma: ${turma} | Resp: ${nomeResponsavel} | Tel Resp: ${telefoneResponsavel || telLimpo} | Alergia: ${alergia} | Saúde: ${condicaoMedica}\n\nENTRE NO GRUPO DO WHATSAPP:\n${GRUPO_WHATSAPP_URL}`;
 
     // 7. Montar o payload da cobrança
     const bodyCobranca = {
