@@ -99,8 +99,25 @@
         <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-6 text-left border-glow">
           <h3 class="text-[#ff007f] font-black uppercase tracking-wider mb-4 text-lg">Figurino</h3>
           <p class="text-sm text-gray-300 mb-4">A taxa de inscrição <strong class="text-white">não contempla</strong> o figurino.</p>
-          <p class="text-sm text-gray-300">O figurino será adquirido à parte através do link de compra que será compartilhado.</p>
+          <p class="text-sm text-gray-300">O figurino será adquirido à parte através do link de compra compartilhado no grupo de avisos do WhatsApp.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- BLOCO DE ACESSO AO GRUPO DO WHATSAPP -->
+    <section class="max-w-5xl mx-auto px-4 mb-16">
+      <div class="bg-gradient-to-r from-[#0b0415] via-[#1a082d] to-[#0b0415] border-2 border-[#25D366]/60 rounded-2xl p-6 md:p-8 text-center shadow-[0_0_25px_rgba(37,211,102,0.25)]">
+        <div class="inline-flex items-center gap-2 bg-[#25D366]/20 border border-[#25D366] text-[#25D366] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">
+          💬 Canal Oficial de Comunicação
+        </div>
+        <h2 class="text-2xl md:text-3xl font-black text-white mb-3">Grupo Oficial de Avisos do WhatsApp</h2>
+        <p class="text-gray-300 text-sm max-w-2xl mx-auto mb-6">
+          Entre no grupo exclusivo para responsáveis e participantes para receber informativos sobre ensaios, links de compra de figurinos e orientações gerais do espetáculo.
+        </p>
+        <a id="btnGrupoWhatsappMain" href="https://chat.whatsapp.com/SEU_LINK_DO_GRUPO" target="_blank" class="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-black font-black py-3.5 px-8 rounded-xl uppercase tracking-wider text-sm transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.4)] transform hover:scale-105">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Entrar no Grupo de Avisos do WhatsApp
+        </a>
       </div>
     </section>
 
@@ -134,9 +151,9 @@
         </div>
         <div class="bg-[#0b0415] border border-[#ff007f]/40 rounded-xl p-6 pt-10 relative text-left border-glow">
           <div class="absolute -top-4 left-6 bg-[#ff007f] text-white text-xs font-bold px-4 py-1.5 rounded-full tracking-wider">PASSO 03</div>
-          <h3 class="text-lg font-bold text-white mb-3">Pagamento e Confirmação</h3>
+          <h3 class="text-lg font-bold text-white mb-3">Pagamento e Grupo de Avisos</h3>
           <p class="text-sm text-gray-300 leading-relaxed">
-            Efetue o pagamento da taxa de inscrição de <strong class="text-[#ffd700]">R$ 200,00</strong> (À vista ou em 2x) para garantir a participação.
+            Efetue o pagamento da taxa de inscrição de <strong class="text-[#ffd700]">R$ 200,00</strong> (À vista ou em 2x) e entre no grupo oficial de avisos do WhatsApp.
           </p>
         </div>
       </div>
@@ -328,7 +345,7 @@
               </div>
               <div>
                 <label class="block text-xs font-bold text-[#ff007f] uppercase mb-1">CPF do Responsável:</label>
-                <input type="text" id="cpfResponsavel" required placeholder="000.000.000-00" class="w-full bg-[#0a0212] border border-[#ff007f] rounded-xl p-3 text-white text-sm outline-none focus:border-[#ffd700]">
+                <input type="text" id="cpfResponsavel" required maxlength="14" placeholder="000.000.000-00" class="w-full bg-[#0a0212] border border-[#ff007f] rounded-xl p-3 text-white text-sm outline-none focus:border-[#ffd700]">
               </div>
             </div>
 
@@ -339,7 +356,7 @@
               </div>
               <div>
                 <label class="block text-xs font-bold text-[#ff007f] uppercase mb-1">WhatsApp / Telefone:</label>
-                <input type="tel" id="telefoneResponsavel" required placeholder="(61) 90000-0000" class="w-full bg-[#0a0212] border border-[#ff007f] rounded-xl p-3 text-white text-sm outline-none focus:border-[#ffd700]">
+                <input type="tel" id="telefoneResponsavel" required maxlength="15" placeholder="(61) 90000-0000" class="w-full bg-[#0a0212] border border-[#ff007f] rounded-xl p-3 text-white text-sm outline-none focus:border-[#ffd700]">
               </div>
             </div>
 
@@ -473,9 +490,76 @@
 
 
   <!-- ========================================== -->
+  <!-- MODAL DE SUCESSO E GRUPO DO WHATSAPP       -->
+  <!-- ========================================== -->
+  <div id="modalSucessoGroup" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="bg-[#130826] border-2 border-[#25D366] rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-[0_0_50px_rgba(37,211,102,0.4)] text-center">
+      <div class="w-16 h-16 bg-[#25D366]/20 border-2 border-[#25D366] rounded-full flex items-center justify-center mx-auto mb-4 text-[#25D366] text-3xl font-black">
+        ✓
+      </div>
+      <h3 class="text-2xl font-black text-white uppercase mb-2">Inscrição Gerada com Sucesso!</h3>
+      <p class="text-gray-300 text-sm mb-6">
+        A sua cobrança foi criada na plataforma Asaas. Agora, você precisa realizar o pagamento e entrar no Grupo Oficial de Avisos do WhatsApp para acompanhar todas as informações do espetáculo.
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <a id="btnLinkPagamentoModal" href="#" target="_blank" class="w-full inline-block bg-gradient-to-r from-[#ff007f] to-[#7928ca] hover:from-[#ffd700] hover:to-[#ff007f] text-white hover:text-[#05010a] font-black py-3.5 px-6 rounded-xl uppercase tracking-wider text-sm transition-all shadow-[0_0_20px_rgba(255,0,127,0.5)]">
+          💳 Realizar Pagamento no Asaas ➔
+        </a>
+
+        <a id="btnGrupoWhatsappModal" href="#" target="_blank" class="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-black font-black py-3.5 px-6 rounded-xl uppercase tracking-wider text-sm transition-all shadow-[0_0_20px_rgba(37,211,102,0.4)]">
+          💬 Entrar no Grupo do WhatsApp ➔
+        </a>
+      </div>
+
+      <button onclick="fecharModalSucessoGroup()" class="text-xs text-gray-400 hover:text-white underline">
+        Fechar e voltar à página inicial
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
   <!-- JAVASCRIPT INTEGRADOR CONECTADO À VERCEL   -->
   <!-- ========================================== -->
   <script>
+    // MÁSCARAS AUTOMÁTICAS PARA CPF E TELEFONE
+    function aplicarMascaraCPF(input) {
+      let v = input.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.slice(0, 11);
+      v = v.replace(/(\d{3})(\d)/, '$1.$2');
+      v = v.replace(/(\d{3})(\d)/, '$1.$2');
+      v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+      input.value = v;
+    }
+
+    function aplicarMascaraTelefone(input) {
+      let v = input.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.slice(0, 11);
+      if (v.length > 10) {
+        v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      } else if (v.length > 5) {
+        v = v.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+      } else if (v.length > 2) {
+        v = v.replace(/^(\d{2})(\d{0,5})$/, '($1) $2');
+      } else {
+        v = v.replace(/^(\d*)$/, '$1');
+      }
+      input.value = v;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const cpfInput = document.getElementById('cpfResponsavel');
+      const telInput = document.getElementById('telefoneResponsavel');
+
+      if (cpfInput) {
+        cpfInput.addEventListener('input', (e) => aplicarMascaraCPF(e.target));
+      }
+      if (telInput) {
+        telInput.addEventListener('input', (e) => aplicarMascaraTelefone(e.target));
+      }
+    });
+
     const figurinosDb = {
       studio: [
         { nome: "Baby Class 2 (Professora Mônica)", img: "figurino1.jpg" },
@@ -565,6 +649,7 @@
     function voltarParaHome() {
       document.getElementById('pagina-figurino').classList.add('hidden');
       document.getElementById('pagina-formulario').classList.add('hidden');
+      document.getElementById('modalSucessoGroup').classList.add('hidden');
       document.getElementById('main-content').style.display = 'block';
       
       document.getElementById('checkConfirma').checked = false;
@@ -581,6 +666,11 @@
       document.getElementById('modalTermo').classList.add('hidden');
       document.getElementById('checkTermo').checked = false;
       liberarBotaoFormulario();
+    }
+
+    function fecharModalSucessoGroup() {
+      document.getElementById('modalSucessoGroup').classList.add('hidden');
+      voltarParaHome();
     }
 
     function liberarBotaoFormulario() {
@@ -612,7 +702,7 @@
       
       const btn = document.getElementById('btnGerarPagamento');
       btn.disabled = true;
-      btn.innerText = "Redirecionando para o pagamento...";
+      btn.innerText = "A processar inscrição...";
 
       const dados = {
         nomeAluna: document.getElementById('nomeAluna').value,
@@ -629,7 +719,6 @@
       };
 
       try {
-        // Envia os dados para a Serverless Function da Vercel em /api/inscricao
         const response = await fetch('/api/inscricao', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -639,17 +728,25 @@
         const resultado = await response.json();
 
         if (resultado.sucesso && resultado.invoiceUrl) {
-          // Redireciona automaticamente para o checkout do Asaas
-          window.location.href = resultado.invoiceUrl;
+          const whatsappUrl = resultado.grupoWhatsappUrl || 'https://chat.whatsapp.com/SEU_LINK_DO_GRUPO';
+          
+          document.getElementById('btnLinkPagamentoModal').href = resultado.invoiceUrl;
+          document.getElementById('btnGrupoWhatsappModal').href = whatsappUrl;
+          
+          document.getElementById('modalSucessoGroup').classList.remove('hidden');
+
+          setTimeout(() => {
+            window.open(resultado.invoiceUrl, '_blank');
+          }, 1200);
+
         } else {
           alert('Atenção: ' + (resultado.erro || 'Não foi possível gerar a cobrança.'));
-          btn.disabled = false;
-          btn.innerText = "Prosseguir para Pagamento ➔";
         }
 
       } catch (err) {
         console.error('Erro na requisição:', err);
         alert('Erro de comunicação. Verifique se a rota /api/inscricao foi criada na Vercel.');
+      } finally {
         btn.disabled = false;
         btn.innerText = "Prosseguir para Pagamento ➔";
       }
