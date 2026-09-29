@@ -43,9 +43,9 @@ export default async function handler(req, res) {
   };
 
   try {
-    // Limpar carateres especiais do CPF e Telefone
+    // Limpar carateres especiais do CPF e Telefone (com fallback seguro caso venha indefinido)
     const cpfLimpo = cpfResponsavel.replace(/\D/g, '');
-    const telLimpo = telefoneResponsavel.replace(/\D/g, '');
+    const telLimpo = telefoneResponsavel ? telefoneResponsavel.replace(/\D/g, '') : '';
 
     // 4. Verificar se o cliente já existe no Asaas pelo CPF
     let customerId = null;
@@ -84,8 +84,8 @@ export default async function handler(req, res) {
     dataVencimento.setDate(dataVencimento.getDate() + 3);
     const dueDate = dataVencimento.toISOString().split('T')[0];
 
-    // 6. Montar a descrição detalhada para o painel do Asaas e comprovativo
-    const descricao = `Inscrição LEVEL UP 2026 - Aluna: ${nomeAluna} | Nasc: ${dataNascimento} | Escola: ${escola === 'studio' ? 'Studio' : 'Colégio'} | Turma: ${turma} | Alergia: ${alergia} | Saúde: ${condicaoMedica} | Grupo Whats: ${GRUPO_WHATSAPP_URL}`;
+    // 6. Montar a descrição detalhada incluindo os dados da aluna, do responsável e o telefone
+    const descricao = `Inscrição LEVEL UP 2026 - Aluna: ${nomeAluna} | Nasc: ${dataNascimento} | Escola: ${escola === 'studio' ? 'Studio' : 'Colégio'} | Turma: ${turma} | Resp: ${nomeResponsavel} | Tel Resp: ${telefoneResponsavel || telLimpo} | Alergia: ${alergia} | Saúde: ${condicaoMedica} | Grupo Whats: ${GRUPO_WHATSAPP_URL}`;
 
     // 7. Montar o payload da cobrança
     const bodyCobranca = {
