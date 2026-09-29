@@ -23,8 +23,9 @@ export default async function handler(req, res) {
     return res.status(400).json({ sucesso: false, erro: 'Preencha todos os campos obrigatórios.' });
   }
 
-  // 3. Puxar diretamente a chave de API cadastrada na Vercel
+  // 3. Puxar diretamente as variáveis de ambiente cadastradas na Vercel
   const ASAAS_API_KEY = process.env.ASAAS_API_KEY;
+  const GRUPO_WHATSAPP_URL = process.env.WHATSAPP_GROUP_URL || 'https://chat.whatsapp.com/SEU_LINK_DO_GRUPO';
 
   if (!ASAAS_API_KEY) {
     return res.status(500).json({ 
@@ -42,9 +43,13 @@ export default async function handler(req, res) {
   };
 
   try {
+    // Limpar carateres especiais do CPF e Telefone
+    const cpfLimpo = cpfResponsavel.replace(/\D/g, '');
+    const telLimpo = telefoneResponsavel.replace(/\D/g, '');
+
     // 4. Verificar se o cliente já existe no Asaas pelo CPF
     let customerId = null;
-    const searchResponse = await fetch(`${ASAAS_URL}/customers?cpfCnpj=${cpfResponsavel}`, { headers });
+    const searchResponse = await fetch(`${ASAAS_URL}/customers?cpfCnpj=${cpfLimpo}`, { headers });
     const searchData = await searchResponse.json();
 
     if (searchData.errors) {
@@ -60,9 +65,9 @@ export default async function handler(req, res) {
         headers,
         body: JSON.stringify({
           name: nomeResponsavel,
-          cpfCnpj: cpfResponsavel,
+          cpfCnpj: cpfLimpo,
           email: emailResponsavel,
-          mobilePhone: telefoneResponsavel,
+          mobilePhone: telLimpo,
           notificationDisabled: false
         })
       });
@@ -79,8 +84,8 @@ export default async function handler(req, res) {
     dataVencimento.setDate(dataVencimento.getDate() + 3);
     const dueDate = dataVencimento.toISOString().split('T')[0];
 
-    // 6. Montar a descrição detalhada para o painel do Asaas
-    const descricao = `Inscrição LEVEL UP 2026 - Aluna: ${nomeAluna} | Nasc: ${dataNascimento} | Escola: ${escola === 'studio' ? 'Studio' : 'Colégio'} | Turma: ${turma} | Alergia: ${alergia} | Saúde: ${condicaoMedica}`;
+    // 6. Montar a descrição detalhada para o painel do Asaas e comprovativo
+    const descricao = `Inscrição LEVEL UP 2026 - Aluna: ${nomeAluna} | Nasc: ${dataNascimento} | Escola: ${escola === 'studio' ? 'Studio' : 'Colégio'} | Turma: ${turma} | Alergia: ${alergia} | Saúde: ${condicaoMedica} | Grupo Whats: ${GRUPO_WHATSAPP_URL}`;
 
     // 7. Montar o payload da cobrança
     const bodyCobranca = {
@@ -88,7 +93,7 @@ export default async function handler(req, res) {
       billingType: 'UNDEFINED',
       dueDate: dueDate,
       description: descricao,
-      externalReference: `INSCRICAO_${cpfResponsavel}_${Date.now()}`
+      externalReference: `INSCRICAO_${cpfLimpo}_${Date.now()}`
     };
 
     if (formaPagamento === 'parcelado_2x') {
@@ -112,10 +117,11 @@ export default async function handler(req, res) {
       return res.status(400).json({ sucesso: false, erro: paymentData.errors[0].description });
     }
 
-    // 9. Retornar a URL de pagamento diretamente para o formulário
+    // 9. Retornar a URL de pagamento e o Link do Grupo de WhatsApp para o cliente
     return res.status(200).json({
       sucesso: true,
-      invoiceUrl: paymentData.invoiceUrl || paymentData.bankSlipUrl
+      invoiceUrl: paymentData.invoiceUrl || paymentData.bankSlipUrl,
+      grupoWhatsappUrl: GRUPO_WHATSAPP_URL
     });
 
   } catch (error) {
