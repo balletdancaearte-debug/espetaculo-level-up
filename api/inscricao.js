@@ -1,4 +1,4 @@
-// api/inscricao.js - Código Completo e Seguro
+// api/inscricao.js - Código Completo com Opção À Vista ou Parcelado em 2x
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -73,17 +73,11 @@ export default async function handler(req, res) {
       }
     }
 
-    // 3. Criar PARCELAMENTO em 2x de R$ 100,00 (Total R$ 200,00) via Pix, Boleto ou Cartão
-    const totalParcelas = 2;
-    const valorParcela = 100.00;
+    // 3. Criar Link de Pagamento flexível (À vista R$ 200,00 ou em 2x)
+    const valorTotal = 200.00;
+    const description = `LEVEL UP 2026 | Aluna: ${dados.nomeAluna} | Turma: ${dados.turma} | Alergia: ${dados.alergia || 'Não'} | Saúde: ${dados.condicaoMedica || 'Não'}`;
 
-    const hoje = new Date();
-    hoje.setDate(hoje.getDate() + 3); // Vencimento da 1ª parcela
-    const dueDate = hoje.toISOString().split('T')[0];
-
-    const description = `LEVEL UP 2026 | Aluna: ${dados.nomeAluna} | Turma: ${dados.turma} | Alergia: ${dados.alergia} | Saúde: ${dados.condicaoMedica}`;
-
-    const installmentRes = await fetch('https://www.asaas.com/api/v3/installments', {
+    const linkRes = await fetch('https://www.asaas.com/api/v3/paymentLinks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -91,38 +85,28 @@ export default async function handler(req, res) {
         'User-Agent': 'StudioDancaEArte'
       },
       body: JSON.stringify({
-        customer: customerId,
-        billingType: 'UNDEFINED', // Aceita Pix, Boleto e Cartão em todas as parcelas
-        installmentCount: totalParcelas,
-        value: valorParcela,
-        dueDate: dueDate,
-        description: description.substring(0, 500)
+        name: `Inscrição LEVEL UP 2026 - ${dados.nomeAluna}`,
+        description: description.substring(0, 500),
+        value: valorTotal,
+        billingType: 'UNDEFINED', // Libera Pix, Boleto e Cartão na mesma tela
+        chargeType: 'DETACHED',    // Permite escolha flexível de parcelamento
+        maxInstallmentCount: 2,    // Permite ao cliente escolher em 1x (à vista) ou em até 2x
+        dueDateLimitDays: 10,      // Validade do link em dias
+        notificationEnabled: true
       })
     });
 
-    const installmentData = await installmentRes.json();
+    const linkData = await linkRes.json();
 
-    // 4. Capturar a URL da fatura para exibir no site
-    if (installmentData.id) {
-      const paymentListRes = await fetch(`https://www.asaas.com/api/v3/payments?installment=${installmentData.id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'access_token': ASAAS_API_KEY,
-          'User-Agent': 'StudioDancaEArte'
-        }
-      });
-      const paymentListData = await paymentListRes.json();
-
-      const invoiceUrl = paymentListData.data?.[0]?.invoiceUrl || `https://www.asaas.com/i/${installmentData.id}`;
-
+    // 4. Retornar a URL de pagamento para o frontend (instrucao.js)
+    if (linkData.url) {
       return res.status(200).json({
         sucesso: true,
-        invoiceUrl: invoiceUrl
+        invoiceUrl: linkData.url
       });
     } else {
       return res.status(400).json({ 
-        erro: installmentData.errors?.[0]?.description || 'Erro ao gerar parcelamento no Asaas.' 
+        erro: linkData.errors?.[0]?.description || 'Erro ao gerar link de pagamento no Asaas.' 
       });
     }
 
