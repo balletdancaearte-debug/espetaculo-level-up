@@ -23,9 +23,9 @@ export default async function handler(req, res) {
     return res.status(400).json({ sucesso: false, erro: 'Preencha todos os campos obrigatórios.' });
   }
 
-  // 3. Puxar diretamente as variáveis de ambiente cadastradas na Vercel
+  // 3. Puxar as credenciais e definir o link do WhatsApp diretamente
   const ASAAS_API_KEY = process.env.ASAAS_API_KEY;
-  const GRUPO_WHATSAPP_URL = process.env.WHATSAPP_GROUP_URL || 'https://chat.whatsapp.com/SEU_LINK_DO_GRUPO';
+  const GRUPO_WHATSAPP_URL = 'https://chat.whatsapp.com/IMRLKCaToRg3dlLGnHcY8E';
 
   if (!ASAAS_API_KEY) {
     return res.status(500).json({ 
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
     });
   }
 
-  // URL fixa de Produção do Asaas vinculada à sua chave de produção
+  // URL fixa de Produção do Asaas
   const ASAAS_URL = 'https://www.asaas.com/api/v3';
 
   const headers = {
@@ -43,7 +43,7 @@ export default async function handler(req, res) {
   };
 
   try {
-    // Limpar carateres especiais do CPF e Telefone (com fallback seguro caso venha indefinido)
+    // Limpar caracteres especiais do CPF e Telefone
     const cpfLimpo = cpfResponsavel.replace(/\D/g, '');
     const telLimpo = telefoneResponsavel ? telefoneResponsavel.replace(/\D/g, '') : '';
 
@@ -84,7 +84,7 @@ export default async function handler(req, res) {
     dataVencimento.setDate(dataVencimento.getDate() + 3);
     const dueDate = dataVencimento.toISOString().split('T')[0];
 
-    // 6. Montar a descrição detalhada com o parágrafo e o link na mesma linha do texto
+    // 6. Montar a descrição detalhada
     const descricao = `Inscrição LEVEL UP 2026 - Aluna: ${nomeAluna} | Nasc: ${dataNascimento} | Escola: ${escola === 'studio' ? 'Studio' : 'Colégio'} | Turma: ${turma} | Resp: ${nomeResponsavel} | Tel Resp: ${telefoneResponsavel || telLimpo} | Alergia: ${alergia} | Saúde: ${condicaoMedica}\n\nENTRE NO GRUPO OFICIAL DE AVISO NO WHATSAPP: ${GRUPO_WHATSAPP_URL}`;
 
     // 7. Montar o payload da cobrança
@@ -117,7 +117,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ sucesso: false, erro: paymentData.errors[0].description });
     }
 
-    // 9. Retornar a URL de pagamento e o Link do Grupo de WhatsApp para o cliente
+    // 9. Retornar a URL de pagamento e o Link do Grupo de WhatsApp
     return res.status(200).json({
       sucesso: true,
       invoiceUrl: paymentData.invoiceUrl || paymentData.bankSlipUrl,
